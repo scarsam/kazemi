@@ -36,15 +36,13 @@ const SubmitButton = ({
   // }, [status, clearForm]);
 
   return (
-    <>
-      <button
-        disabled={pending}
-        type="submit"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded col-start-1 col-end-3 disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {pending ? "Skickar 🎉 ❤️ 🎉 ❤️ 🎉" : "Skicka"}
-      </button>
-    </>
+    <button
+      disabled={pending}
+      type="submit"
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded col-span-2 disabled:opacity-50 disabled:cursor-not-allowed w-full"
+    >
+      {pending ? "Skickar 🎉 ❤️ 🎉 ❤️ 🎉" : "Skicka"}
+    </button>
   );
 };
 
@@ -55,12 +53,7 @@ export const FormWrapper = () => {
 
   return (
     <>
-      <div className="mb-4">
-        <p>
-          OSA i formuläret nedan senast den 15/1. Om du har frågor hör gärna av
-          dig till vårt värdpar.
-        </p>
-        <p>Välj antalet personer att OSA för:</p>
+      <div className="mb-4 text-center col-span-2">
         {[1, 2, 3, 4, 5].map((i) => (
           <button
             key={i}
@@ -74,7 +67,7 @@ export const FormWrapper = () => {
         ))}
       </div>
       {guests !== 0 && (
-        <form className="grid grid-cols-2 gap-4" ref={ref} action={formAction}>
+        <form className="grid col-span-2 gap-4" ref={ref} action={formAction}>
           {[...Array(guests)].map((_, i) => (
             <Form key={i} guest={i + 1} />
           ))}
