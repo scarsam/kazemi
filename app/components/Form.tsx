@@ -1,27 +1,42 @@
+import { useState } from "react";
+import Confetti from "react-confetti";
+
 export const Form = ({ guest }: { guest: number }) => {
+  const [confetti, setConfetti] = useState(false);
+
+  const displayConfetti = () => {
+    setConfetti(true)
+    setTimeout(() => {
+      setConfetti(false)
+    }, 5000)
+  }
+
   return (
-    <div className="col-span-2 mb-3">
-      <p className="text-lg">Gäst {guest}</p>
-      <label className="mb-3 block">
-        Namn
-        <input
-          className="border border-gray-300 rounded-md p-2 block w-full"
-          type="text"
-          required
-          name={`firstname-${guest}`}
-          placeholder="Ditt förnamn"
-        />
-      </label>
-      <label className="mb-3 block">
-        Efternamn
-        <input
-          className="border border-gray-300 rounded-md p-2 block w-full"
-          type="text"
-          required
-          name={`lastname-${guest}`}
-          placeholder="Ditt efternamn"
-        />
-      </label>
+    <div className="col-span-2 mb-2">
+      {confetti && <div className='fixed left-0 top-0'><Confetti tweenDuration={800} colors={['#008C45', '#F4F9FF', '#CD212A']} /></div>}
+      <p className="text-lg font-semibold">Gäst {guest}</p>
+      <div className='grid grid-cols-2 gap-4'>
+        <label className="mb-3 block">
+          Namn
+          <input
+            className="border border-gray-300 rounded-md p-2 block w-full"
+            type="text"
+            required
+            name={`firstname-${guest}`}
+            placeholder="Ditt förnamn"
+            />
+        </label>
+        <label className="mb-3 block">
+          Efternamn
+          <input
+            className="border border-gray-300 rounded-md p-2 block w-full"
+            type="text"
+            required
+            name={`lastname-${guest}`}
+            placeholder="Ditt efternamn"
+            />
+        </label>
+      </div>
       <label className="mb-3 block">
         E-post
         <input
@@ -42,11 +57,13 @@ export const Form = ({ guest }: { guest: number }) => {
       </label>
       <fieldset className="block col-start-1 col-end-3 mb-3 w-full">
         <legend>Kommer du på bröllopet?</legend>
-
+        <div className='absolute top-1 -left-1/2'>
+    </div>
         <div>
           <input
             className="mr-2"
             type="radio"
+            onClick={displayConfetti}
             id={`ja-${guest}`}
             name={`osa-${guest}`}
             value="ja"

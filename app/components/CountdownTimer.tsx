@@ -1,5 +1,8 @@
-"use client"
-import React, { useState, useEffect } from 'react';
+"use client";
+import React, { useState, useEffect, useCallback } from "react";
+import { Open_Sans } from "next/font/google";
+
+const open = Open_Sans({ subsets: ["latin"], weight: "400" });
 
 interface Props {
   endDate: Date;
@@ -11,22 +14,26 @@ const CountdownTimer: React.FC<Props> = ({ endDate }) => {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
-  const calculateTimeLeft = () => {
+  const calculateTimeLeft = useCallback(() => {
     const now = new Date();
     const difference = endDate.getTime() - now.getTime();
 
     const daysDifference = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hoursDifference = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutesDifference = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const hoursDifference = Math.floor(
+      (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+    );
+    const minutesDifference = Math.floor(
+      (difference % (1000 * 60 * 60)) / (1000 * 60),
+    );
     const secondsDifference = Math.floor((difference % (1000 * 60)) / 1000);
 
     return {
       daysDifference,
       hoursDifference,
       minutesDifference,
-      secondsDifference
+      secondsDifference,
     };
-  };
+  }, [endDate]);
 
   useEffect(() => {
     const timerID = setInterval(() => {
@@ -41,9 +48,14 @@ const CountdownTimer: React.FC<Props> = ({ endDate }) => {
   }, [calculateTimeLeft]);
 
   return (
-    <p>
-      {String(days).padStart(2, '0')}dagar {String(hours).padStart(2, '0')}timmar {String(minutes).padStart(2, '0')}minuter {String(seconds).padStart(2, '0')}sekunder
-    </p>
+    <div className="fixed bottom-0 bg-white w-full left-0 right-0 text-center border-t">
+      <p className={`my-2 ${open.className}`}>
+        🇮🇹{' '}
+        {String(days).padStart(2, "0")} dagar {String(hours).padStart(2, "0")}{" "}
+        timmar {String(minutes).padStart(2, "0")} minuter{" "}
+        {String(seconds).padStart(2, "0")} sekunder 🇮🇹
+      </p>
+    </div>
   );
 };
 

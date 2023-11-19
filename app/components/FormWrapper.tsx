@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Form } from "./Form";
 import { createRow } from "../actions/formActions";
 import { useFormState, useFormStatus } from "react-dom";
+// import { ConfettiWrapper } from "./ConfettiWrapper";
+import Confetti from "react-confetti";
 
 const SubmitButton = ({
   status,
@@ -12,34 +14,13 @@ const SubmitButton = ({
   status: string | undefined;
   clearForm: void;
 }) => {
-  // const [success, setSuccess] = useState(false);
   const { pending } = useFormStatus();
-
-  // useEffect(() => {
-  //   let successTimeout: ReturnType<typeof setTimeout> | undefined;
-
-  //   if (status === "success") {
-  //     setSuccess(true);
-
-  //     // Set a new timeout to reset the success state after 4 seconds (2 seconds for "success" and an additional 2 seconds to reset).
-  //     successTimeout = setTimeout(() => {
-  //       setSuccess(false);
-  //     }, 4000);
-  //   }
-
-  //   // Cleanup function to clear the timeout when the component unmounts or status changes.
-  //   return () => {
-  //     if (successTimeout) {
-  //       clearTimeout(successTimeout);
-  //     }
-  //   };
-  // }, [status, clearForm]);
 
   return (
     <button
       disabled={pending}
       type="submit"
-      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded col-span-2 disabled:opacity-50 disabled:cursor-not-allowed w-full"
+      className="bg-green-700 hover:bg-green-800 text-white py-2 px-4 rounded col-span-2 disabled:opacity-50 disabled:cursor-not-allowed w-full"
     >
       {pending ? "Skickar 🎉 ❤️ 🎉 ❤️ 🎉" : "Skicka"}
     </button>
@@ -57,8 +38,8 @@ export const FormWrapper = () => {
         {[1, 2, 3, 4, 5].map((i) => (
           <button
             key={i}
-            className={`bg-red-200 px-4 py-2 rounded-sm hover:bg-red-300 ${
-              guests === i ? "bg-red-400" : ""
+            className={`bg-green-700 text-white px-4 py-2 mx-1 rounded-sm hover:bg-green-800 ${
+              guests === i ? "bg-red-500" : ""
             }`}
             onClick={() => setGuests(i)}
           >
