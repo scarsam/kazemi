@@ -27,7 +27,7 @@ export default function Home() {
         </h1>
       </section>
       <section className="w-full">
-        <div className="px-8 md:mx-16 text-center border-b pb-5">
+        <div className="md:mx-16 text-center border-b pb-5">
         <h2 className={`text-sm mt-4 ${open.className}`}>13 - 14 maj 2024</h2>
           <p className={open.className}>
             Vi älskar varandra! Vi älskar er! Vi ska gifta oss och vill inget
@@ -39,7 +39,7 @@ export default function Home() {
         </div>
       </section>
       <section className="w-full">
-        <div className="px-8 md:px-16">
+        <div className="md:px-16">
           <h2 className={`${vibe.className} text-4xl mb-3`}>Var och när?</h2>
           <p className={open.className}>
             Under 13-14 maj har vi abonnerat ett mysigt ställe där vi alla ska
@@ -68,7 +68,7 @@ export default function Home() {
         </div>
       </section>
       <section className="w-full">
-        <div className="px-8 md:px-16">
+        <div className="md:px-16">
           <h2 className={`${vibe.className} text-4xl mb-3`}>
             Måndagen den 13 maj 2024
           </h2>
@@ -84,7 +84,7 @@ export default function Home() {
         </div>
       </section>
       <section className="w-full">
-        <div className="px-8 md:px-16">
+        <div className="md:px-16">
           <h2 className={`${vibe.className} text-4xl mb-3`}>
             Tisdagen den 14 maj 2024
           </h2>
@@ -104,11 +104,11 @@ export default function Home() {
         </div>
       </section>
       <section className="w-full">
-        <div className="px-8 md:pb-8 md:px-16 grid grid-cols-3 gap-x-8">
+        <div className="md:pb-8 md:px-16 grid grid-cols-3 gap-x-4">
           <h2 className={`col-span-3 text-4xl mb-3 ${vibe.className}`}>
             Övrig information
           </h2>
-          <article className={`${open.className} col-span-2 md:col-span-1`}>
+          <article className={`${open.className} col-span-3 md:col-span-1`}>
             <h4>Boende</h4>
             <p>
               Detta är ett intimt bröllop och Valle di Badia har lite olika
@@ -118,22 +118,31 @@ export default function Home() {
               någon de känner.
             </p>
           </article>
-          <article className={`${open.className} col-span-2 md:col-span-1`}>
+          <article className={`${open.className} col-span-3 md:col-span-1`}>
             <h4>OSA</h4>
             <p>OSA gärna senast den 12 januari 2024 genom formuläret nedan. Vi
               hoppas verkligen att vi ska få fira tillsammans med er.</p>
           </article>
-          <article className={`${open.className} col-span-2 md:col-span-1`}>
+          <article className={`${open.className} col-span-3 md:col-span-1`}>
             <h4>Barn</h4>
             <p>We love them, but don&apos;t bring them!</p>
           </article>
+          <article className={`${open.className} col-span-3 md:col-span-1`}>
+            <h4>Tal</h4>
+            <p>Hör av er till våra en utav våra toastmadames</p>
+            <p>Sophie</p>
+            <p>Nadje</p>
+          </article>
+          <article className={`${open.className} col-span-3 md:col-span-1`}>
+            <h4>Presenter</h4>
+            <p>Vi blir glada om ni kommer</p>
+          </article>
         </div>
       </section>
-      <section className="w-full relative">
-        <div className="px-8 pb-4 md:pb-6 md:px-16 grid grid-cols-2 gap-x-8">
-          <div className="text-center col-span-2">
+      <section className="w-full relative mt-6">
+        <div className="md:pb-6 md:px-16">
+          <div className="text-center">
             <h1 className={vibe.className}>Arrivederci!</h1>
-
             <p className={open.className}>Välj antalet personer att OSA för:</p>
           </div>
           <FormWrapper />
