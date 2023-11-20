@@ -49,7 +49,7 @@ const CountdownTimer: React.FC<Props> = ({ endDate }) => {
 
   return (
     <div className="fixed bottom-0 bg-white w-full left-0 right-0 text-center border-t">
-      <p className={`my-2 ${open.className}`}>
+      <p className={`my-2 ${open.className} text-sm md:text-base`}>
         🇮🇹{' '}
         {String(days).padStart(2, "0")} dagar {String(hours).padStart(2, "0")}{" "}
         timmar {String(minutes).padStart(2, "0")} minuter{" "}
