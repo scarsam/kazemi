@@ -38,11 +38,14 @@ export default function Home() {
       </section>
       <section className="w-full">
         <div className="md:px-16">
-          <h2 className={`${vibe.className} text-4xl mb-3 mt-8`}>Var och när?</h2>
+          <h2 className={`${vibe.className} text-4xl mb-3 mt-8`}>
+            Var och när?
+          </h2>
           <p className={open.className}>
             Amore ska firas under 13-14 maj i en liten by utanför Pisa i
-            Italien. Den lilla mysiga byn heter Valle di Badia och där har vi
-            bokat boende åt oss alla under dessa två dagar.
+            Italien. Den lilla mysiga byn heter{" "}
+            <a href="https://www.valledibadia.it/en/">Valle di Badia</a> och där
+            har vi bokat boende åt oss alla under dessa två dagar.
           </p>
           <p className={open.className}>
             Man flyger enklast antingen till Pisa eller till Florens. Från Pisa
@@ -190,10 +193,12 @@ export default function Home() {
       <section className="w-full relative mt-20">
         <div className="pb-6 md:px-16">
           <div className="text-center">
-          <h2 className={`${vibe.className} text-4xl text-center mt-0`}>OSA</h2>
+            <h2 className={`${vibe.className} text-4xl text-center mt-0`}>
+              OSA
+            </h2>
             <p className={`${open.className} mb-0`}>
               OSA gärna senast den{" "}
-              <strong className="underline">12 januari 2024</strong> genom
+              <strong className="underline">5 januari 2024</strong> genom
               formuläret nedan.
             </p>
             <p className={`${open.className} mt-0`}>
