@@ -4,8 +4,6 @@ import { useRef, useState } from "react";
 import { Form } from "./Form";
 import { createRow } from "../actions/formActions";
 import { useFormState, useFormStatus } from "react-dom";
-// import { ConfettiWrapper } from "./ConfettiWrapper";
-import Confetti from "react-confetti";
 
 const SubmitButton = ({
   status,
@@ -39,9 +37,11 @@ export const FormWrapper = () => {
           <button
             key={i}
             className={`bg-green-700 text-white px-4 py-2 mx-1 rounded-sm hover:bg-green-800 ${
-              guests === i ? "bg-red-500" : ""
+              guests === i ? "bg-red-500 hover:bg-red-500" : ""
             }`}
-            onClick={() => setGuests(i)}
+            onClick={() => {
+              setGuests(i);
+            }}
           >
             {i}
           </button>
@@ -52,6 +52,7 @@ export const FormWrapper = () => {
           {[...Array(guests)].map((_, i) => (
             <Form key={i} guest={i + 1} />
           ))}
+
           <SubmitButton
             status={state?.message}
             clearForm={ref.current?.reset()}
