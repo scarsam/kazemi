@@ -44,8 +44,10 @@ export default function Home() {
           <p className={open.className}>
             Amore ska firas under 13-14 maj i en liten by utanför Pisa i
             Italien. Den lilla mysiga byn heter{" "}
-            <a href="https://www.valledibadia.it/en/">Valle di Badia</a> och där
-            har vi bokat boende åt oss alla under dessa två dagar.
+            <a target="_blank" href="https://www.valledibadia.it/en/">
+              Valle di Badia
+            </a>{" "}
+            och där har vi bokat boende åt oss alla under dessa två dagar.
           </p>
           <p className={open.className}>
             Man flyger enklast antingen till Pisa eller till Florens. Från Pisa
