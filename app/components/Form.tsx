@@ -84,7 +84,7 @@ export const Form = ({ guest }: { guest: number }) => {
       </fieldset>
 
       <label className="col-start-1 col-end-3 mb-3 w-full" htmlFor="mat">
-        Har du några mat preferenser?
+        Har du några matpreferenser?
         <input
           className="border border-gray-300 rounded-md p-2 block w-full"
           type="textarea"
