@@ -200,7 +200,7 @@ export default function Home() {
             </h2>
             <p className={`${open.className} mb-0`}>
               OSA gärna senast den{" "}
-              <strong className="underline">5 januari 2024</strong> genom
+              <strong className="underline">26 januari 2024</strong> genom
               formuläret nedan.
             </p>
             <p className={`${open.className} mt-0`}>
